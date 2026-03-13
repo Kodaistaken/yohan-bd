@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bon Anniversaire Yohan</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three":            "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+        "three/addons/":    "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- 2-D firework canvas — full screen, behind everything -->
+  <canvas id="fx"></canvas>
+
+  <!-- Three.js grape lives here (renderer appends its canvas) -->
+  <div id="grape-container"></div>
+
+  <div id="hint">✦ cliquez sur les grains ✦</div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
