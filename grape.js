@@ -242,7 +242,10 @@ export class GrapeCluster {
 
     const coords = (e) => {
       const rect = canvas.getBoundingClientRect();
-      const src  = e.touches ? e.touches[0] : e;
+      // touchend: e.touches is empty — must use changedTouches instead
+      const src  = (e.changedTouches && e.changedTouches[0])
+                || (e.touches        && e.touches[0])
+                || e;
       return {
         nx: ((src.clientX - rect.left) / rect.width)  * 2 - 1,
         ny: -((src.clientY - rect.top)  / rect.height) * 2 + 1,
